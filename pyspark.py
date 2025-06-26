@@ -1,8 +1,4 @@
-# Databricks notebook source
-# MAGIC %md
-# MAGIC ### Data Reading JSON
 
-# COMMAND ----------
 
 df_json=spark.read.format('json').option('inferSchema',True)\
     .option('header',True)\
@@ -10,20 +6,14 @@ df_json=spark.read.format('json').option('inferSchema',True)\
             .load('/Volumes/bigdata/pyspark_bigdata/bigdata/drivers.json')
 
 
-# COMMAND ----------
+
 
 df_json.display()
 
-# COMMAND ----------
 
-# MAGIC %md
-# MAGIC ### Data reading
-
-# COMMAND ----------
 
 df=spark.read.format('csv').option('inferSchema',True).option('header',True).load('/Volumes/bigdata/pyspark_bigdata/bigdata/')
 
-# COMMAND ----------
 
 df.show()
 
